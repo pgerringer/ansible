@@ -1,0 +1,7 @@
+---
+- hosts: web
+  become: yes
+  tasks:
+    - name: update web repo
+      ansible_become_user: pgerringer
+      shell: git -C /home/pgerringer/html pull

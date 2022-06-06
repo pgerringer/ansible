@@ -1,0 +1,10 @@
+---
+- hosts: cgtweb
+
+  tasks:
+    - name: update web repo
+      shell: git -C ~/html pull
+
+    - name: remove previous html
+      shell: rm -rf /var/www/html/* && cp -rf ~/html/* /var/www/html/
+
