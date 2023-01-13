@@ -3,9 +3,13 @@
   tasks:
     - name: Updating FTL
       shell: pihole updatePihole
+      args:
+         warn: false
 
     - name: Updating Gravity
       shell: pihole updateGravity
+      args:
+         warn: false
 
 - hosts: infra_apps,apps,web,piHole,miners
   tasks:
