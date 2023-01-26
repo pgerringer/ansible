@@ -21,7 +21,9 @@
          cache_valid_time: 3600
          autoremove: yes
          autoclean: yes
-
+         
+- hosts: infra_apps,apps,web,piHole
+  tasks:
     - name: Checking to see if a reboot is needed
       register: reboot_required
       stat:
