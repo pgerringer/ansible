@@ -11,7 +11,7 @@
       args:
         warn: false
 
-- hosts: infra_apps,apps,web,piHole,miners
+- hosts: infra_apps,apps,web,piHole,miners,apps-noreboot
   tasks:
     - name: Updating all packages
       apt:
