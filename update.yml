@@ -3,11 +3,15 @@
   tasks:
     - name: Updating FTL
       shell: pihole updatePihole
+      args:
+        warn: false
 
     - name: Updating Gravity
       shell: pihole updateGravity
+      args:
+        warn: false
 
-- hosts: infra_apps,apps,web,piHole,miners
+- hosts: piHole,apps,apps-noreboot,miners
   tasks:
     - name: Updating all packages
       apt:
@@ -17,7 +21,9 @@
          cache_valid_time: 3600
          autoremove: yes
          autoclean: yes
-
+         
+- hosts: piHole,apps
+  tasks:
     - name: Checking to see if a reboot is needed
       register: reboot_required
       stat:
