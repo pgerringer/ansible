@@ -2,7 +2,8 @@
 - hosts: piHole,apps
   tasks:
     - name: Updating all packages
-      remote_user: ansible
+      become: yes
+      become_user: ansible
       apt:
          update_cache: yes
          upgrade: dist
