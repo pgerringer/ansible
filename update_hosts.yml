@@ -2,9 +2,8 @@
 - hosts: piHole,apps
   tasks:
     - name: Updating all packages
-      become: yes
+      become: true
       become_user: pgerringer
-      remote_user: pgerringer
       apt:
          update_cache: yes
          upgrade: dist
