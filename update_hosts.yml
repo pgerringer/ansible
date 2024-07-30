@@ -4,6 +4,7 @@
     - name: Updating all packages
       become: true
       become_user: pgerringer
+      ansible_become_user: pgerringer
       apt:
          update_cache: yes
          upgrade: dist
