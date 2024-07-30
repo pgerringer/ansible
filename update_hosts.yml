@@ -1,4 +1,16 @@
 ---
+- hosts: piHole
+  tasks:
+    - name: Updating FTL
+      shell: pihole -up
+      args:
+        warn: false
+
+    - name: Updating Gravity
+      shell: pihole -p
+      args:
+        warn: false
+        
 - hosts: piHole,apps
   tasks:
     - name: Updating all packages
