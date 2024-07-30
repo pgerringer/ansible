@@ -11,7 +11,7 @@
       args:
         warn: false
         
-- hosts: piHole,apps,vms
+- hosts: piHole,apps,vms,miners
   tasks:
     - name: Updating all packages
       apt:
