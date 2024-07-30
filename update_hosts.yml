@@ -1,9 +1,9 @@
 ---
 - hosts: piHole,apps
-  become: yes
   tasks:
     - name: Updating all packages
-      ansible_become_user: pgerringer
+      become: yes
+      become_user: pgerringer
       apt:
          update_cache: yes
          upgrade: dist
