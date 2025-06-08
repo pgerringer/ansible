@@ -1,6 +1,6 @@
 ---
 - hosts: UpdateAndReboot
-    become: yes
+  become: yes
   tasks:
     - name: Updating all packages
       ansible_become_user: pgerringer
