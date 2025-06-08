@@ -1,12 +1,12 @@
 ---
 - hosts: UpdateAndReboot
-  tasks:
-    - name: Updating all packages
-      ansible_become_user: pgerringer
-      apt:
-         update_cache: yes
-         upgrade: yes
-         force_apt_get: yes
-         cache_valid_time: 3600
-         autoremove: yes
-         autoclean: yes
+    tasks:
+      - name: Updating all packages
+        ansible_become_user: pgerringer
+        apt:
+          update_cache: yes
+          upgrade: yes
+          force_apt_get: yes
+          cache_valid_time: 3600
+          autoremove: yes
+          autoclean: yes
