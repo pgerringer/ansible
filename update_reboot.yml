@@ -3,6 +3,9 @@
   hosts: all
   tasks:
     - name: Updating all packages
+      become: true
+      become_method: sudo
+      become_user: root
       apt:
         update_cache: yes
         upgrade: yes
