@@ -2,7 +2,6 @@
 - hosts: UpdateAndReboot
   tasks:
     - name: Updating all packages
-      ansible_become_user: pgerringer
       apt:
         update_cache: yes
         upgrade: yes
