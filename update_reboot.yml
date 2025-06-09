@@ -6,6 +6,7 @@
       become: true
       become_method: sudo
       become_user: root
+      remote_user: root
       apt:
         update_cache: yes
         upgrade: yes
