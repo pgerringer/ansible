@@ -5,7 +5,7 @@
     - name: Updating all packages
       become: true
       become_method: sudo
-      remote_user: semaphore
+      remote_user: root
       apt:
         update_cache: yes
         upgrade: yes
