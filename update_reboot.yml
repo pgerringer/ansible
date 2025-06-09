@@ -5,7 +5,7 @@
     - name: Updating all packages
       become: true
       become_method: sudo
-      become_user: root
+      become_user: semaphore
       apt:
         update_cache: yes
         upgrade: yes
