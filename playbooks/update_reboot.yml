@@ -1,6 +1,5 @@
 ---
 - hosts: UpdateAndReboot
-  hosts: all
   tasks:
     - name: Updating all packages
       become: true
