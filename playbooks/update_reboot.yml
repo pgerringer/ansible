@@ -1,4 +1,16 @@
 ---
+- hosts: piHoleUpdate
+  tasks:
+    - name: Updating FTL
+      shell: pihole -up
+      args:
+        warn: false
+
+    - name: Updating Gravity
+      shell: pihole -g
+      args:
+        warn: false
+
 - hosts: UpdateAndReboot,piholeUpdate
   tasks:
     - name: Updating all packages
@@ -23,14 +35,4 @@
         post_reboot_delay: 30
         test_command: uptime
 
-- hosts: piHoleUpdate
-  tasks:
-    - name: Updating FTL
-      shell: pihole -up
-      args:
-        warn: false
 
-    - name: Updating Gravity
-      shell: pihole -g
-      args:
-        warn: false
