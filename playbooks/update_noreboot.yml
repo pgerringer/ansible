@@ -10,6 +10,9 @@
         warn: false
 
     - name: Updating Gravity
+      become: true
+      become_method: sudo
+      remote_user: root
       shell: pihole -g
       args:
         warn: false
