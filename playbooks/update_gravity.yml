@@ -1,0 +1,16 @@
+---
+- hosts: pihole_hosts
+  become: true
+  become_method: sudo
+  gather_facts: false # No facts needed for this simple task
+
+  tasks:
+    - name: Update Pi-hole Gravity lists
+      ansible.builtin.command: pihole -g
+      register: gravity_update_result
+      changed_when: "'Everything is already up to date' not in gravity_update_result.stdout"
+      # The 'changed_when' makes the task idempotent, only reporting a change if an actual update occurred.
+
+    - name: Display Gravity update results
+      ansible.builtin.debug:
+        var: gravity_update_result.stdout_lines
