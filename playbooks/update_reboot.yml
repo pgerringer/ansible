@@ -1,5 +1,6 @@
 ---
 - hosts: UpdateAndReboot
+  become: true
   tasks:
     - name: Updating all packages
       become: true
@@ -21,7 +22,6 @@
 
     - name: Reboot the server if required
       ansible.builtin.reboot:
-        become: true
         msg: "Reboot initiated by Ansible due to system updates"
         reboot_timeout: 600 # Maximum seconds to wait for the system to reboot
       when: reboot_required_file.stat.exists == true
