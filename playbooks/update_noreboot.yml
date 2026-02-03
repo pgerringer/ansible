@@ -2,18 +2,12 @@
 - hosts: piHole
   tasks:
     - name: Updating FTL
-      become: true
-      become_method: sudo
-      remote_user: root
-      shell: pihole -up
+      ansible.builtin.command: pihole -up
       args:
         warn: false
 
     - name: Updating Gravity
-      become: true
-      become_method: sudo
-      remote_user: root
-      shell: pihole -g
+      ansible.builtin.command: pihole -g
       args:
         warn: false
         
