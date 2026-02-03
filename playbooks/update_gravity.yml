@@ -1,6 +1,6 @@
 ---
 - hosts: pihole_hosts
-  become: true
+  become: yes
   become_method: sudo
   gather_facts: false # No facts needed for this simple task
 
