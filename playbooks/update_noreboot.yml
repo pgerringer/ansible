@@ -1,5 +1,5 @@
 ---
-- hosts: piHole
+- hosts: pihole
   tasks:
     - name: Updating FTL
       ansible.builtin.command: pihole -up
@@ -11,7 +11,7 @@
       args:
         warn: false
         
-- hosts: piHole,UpdateAndNoReboot
+- hosts: pihole,UpdateAndNoReboot
   tasks:
     - name: Updating all packages
       apt:
