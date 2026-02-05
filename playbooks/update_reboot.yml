@@ -12,7 +12,12 @@
         cache_valid_time: 3600
         autoremove: yes
         autoclean: yes
-    
+        
+- hosts: UpdateButNoReboot
+  become: true
+  become_method: sudo
+  remote_user: root
+  tasks:    
     - name: Check if a reboot is required
       ansible.builtin.stat:
         path: /var/run/reboot-required
