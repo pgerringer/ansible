@@ -1,5 +1,5 @@
 ---
-- hosts: UpdateAndReboot
+- hosts: Reboot,NoReboot
   become: true
   become_method: sudo
   remote_user: root
@@ -13,7 +13,7 @@
         autoremove: yes
         autoclean: yes
         
-- hosts: UpdateButNoReboot
+- hosts: Reboot
   become: true
   become_method: sudo
   remote_user: root
